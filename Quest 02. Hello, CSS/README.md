@@ -1,3 +1,34 @@
+<<<<<<< HEAD
+## CHECKLIST
+- CSS를 HTML에 적용하는 세 가지 방법의 장단점은 무엇인가요?
+	- 외부 파일 생성
+		* 장점 : 재사용 용이
+		- 단점 : 여러 외부 파일 부를 시 
+	- html 문서 내부에 기입 `<style>`
+ 		- 장점 : 문서 내 재사용 용이
+		- 단점 : 페이지 로딩 시간 증가
+	- html 문서 내부 태그 속성으로 기입
+		- 장점 : 직접적 적용으로 결과 확인 용이
+		- 단점 : 재사용 불가 및 태그 복잡도 증가
+
+- 여러 개의 CSS 규칙이 한 개의 대상에 적용될 때, 어떤 규칙이 우선순위를 가지게 되나요?
+	1. 내부 지정 우선 순위 별로 상이함
+	2. 상기에 차이가 없을 경우, css 적용 횟수에 따라 차등함
+	3. 모두 동일할 시 기입 라인   
+
+- 어떤 박스가 position: absolute;인 속성을 갖는다면, 그 위치의 기준점은 어디가 되나요?
+	- 상위 레이어 `position` 속성에 따라 상이함
+
+- 가로나 세로로 여러 개의 박스가 공간을 채우되, 그 중 한 개의 박스만 가변적인 크기를 가지고 나머지 박스는 고정된 크기를 갖게 하려면 어떻게 해야 할까요?
+	- `position` 을 사용해 레이어 배치. `absolute` 로 박스 위치를 조정할 수 있다. 
+	- `float`을 사용해 
+- float 속성은 왜 좋지 않을까요?
+	- 자식 요소에 float 속성을 넣으면 부모의 공간이 무시됨
+   
+- Flexbox(Flexible box)와 CSS Grid의 차이와 장단점은 무엇일까요?
+	- Flexbox : 가로나 세로의 한 축 (1차원)을 기준으로 요소를 배열해 하위 아이템 정렬 용이 - 소규모 레이아웃에 적합
+	- Grid : 가로세로 2차원 매트리스 기준으로 요소를 배치 - grid area를 만들어 내부 아이템 크기 및 위치 조정 
+=======
 # Quest 02. Hello, CSS
 
 
@@ -43,3 +74,4 @@
 * [이 그림](layout2.png)을 flexbox를 쓰지 않고 구현해 보세요. [`skeletons/layout2.html`](skeletons/layout2.html)  파일에 링크된 [`skeletons/layout2.css`](skeletons/layout2.css) 파일을 수정하면 됩니다.
 * [이 그림](layout3.png)을 flexbox를 쓰지 않고 구현해 보세요. [`skeletons/layout3.html`](skeletons/layout3.html)  파일에 링크된 [`skeletons/layout3.css`](skeletons/layout3.css) 파일을 수정하면 됩니다.
 * 위와 같은 그림을 flexbox를 써서 구현해 보세요. [`skeletons/layout4.html`](skeletons/layout4.html)  파일에 링크된 [`skeletons/layout4.css`](skeletons/layout4.css) 파일을 수정하면 됩니다.
+>>>>>>> ed8f065032d04870472759c4d19bfeadf27b5344
