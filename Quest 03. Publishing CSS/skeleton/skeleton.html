@@ -7,214 +7,282 @@
 	</head>
 
 	<body>
-		<header class='top-header'>
-			<div class='header-search'>		
-				<span class="iconify" data-icon="octicon:logo-github" data-inline="false"></span>
-				<span>
-					This repository
-				</span>
-				<input type="text" placeholder="Search" />
-				
-			</div>
+		<header class='flex-spacebtw bgcolour-grey height-60'>
+			<div class='flex-spacebtw width-70'>
+				<div class="align-header">
+					<span class="iconify repo-icon" data-icon="octicon:logo-github" data-inline="false"></span>
+						This repository
+					<input type="text" placeholder="Search" class='header-search'/>
 						
-			<nav class='horizontal-list'>
-				<ul>
-					<li>Explore</li>
-					<li>Features</li>
-					<li>Enterprise</li>
-					<li>Pricing</li>
-				</ul>
-			</nav>
+					<nav>
+						<ul class="horizontal-list">
+							<li>Explore</li>
+							<li>Features</li>
+							<li>Enterprise</li>
+							<li>Pricing</li>
+						</ul>
+					</nav>
+				</div>			
 
-			<div class='header-sign'>	
-				<button class="btn-green">Sign up</button>
-				<button>Sign in</button>
+				<div>	
+					<button class="btn-green">Sign up</button>
+					<button>Sign in</button>
+				</div>
 			</div>
 			
 		</header>
 		
-		<section>
-			<header class = 'repo-status-height'>
-			<div class="header-icon">				
-				<div class='repo-title'>
-					<span class="iconify" data-icon="octicon:repo" data-inline="false"></span>	
-					<span>KnowRe / WebDeCurriculum</span>
+		<section class="width-70" style="padding-bottom: 70px;">
+			
+			<div class="flex-spacebtw">
+				<div class='align-header height-60' style="font-size: 25px;">
+					<span class="iconify icon-grey repo-icon" data-icon="octicon:repo" data-inline="false"></span>	
+					<span><a href='#'>KnowRe</a></span> 
+					<span class='vertical-margin'> / </span>
+					<span><a href='#'><b>WebDevCurriculum</b></a></span>
 				</div>
-				
-	            <div class="btn-double">
-	              <div>
-		            <span class='iconify span-icon-padding' data-icon="octicon:eye" data-inline="false"></span>	              
-	                watch
-	              </div>
-	              
-	              <div>
-	                 19
-	              </div>
-	              
-	            </div>
-            
-	            <div class="btn-double">
-		            
-		            <div>
-			            <span class='iconify span-icon-padding' data-icon="octicon:star" data-inline="false"></span>
-		              Star
+			
+				<div class='flex-spacebtw align-header'>
+		            <div class="btn-double align-header">
+		              <div>
+			            <span class='iconify span-icon-padding' data-icon="octicon:eye" data-inline="false"></span>	              
+		                watch
+		              </div>
+		              
+		              <div>
+		                 19
+		              </div>
+		              
 		            </div>
-		            
-					<div>
-						113
-					</div>
-	            </div>
-            
-	            <div class="btn-double">
-					<div>
-						<span class='iconify span-icon-padding' data-icon="octicon:repo-forked" data-inline="false"></span>
-						Fork
-					</div>
-					
-					<div>
-						106
-					</div>
+	            
+		            <div class="btn-double align-header">
+			            
+			            <div>
+				            <span class='iconify span-icon-padding' data-icon="octicon:star" data-inline="false"></span>
+			              Star
+			            </div>
+			            
+						<div>
+							113
+						</div>
+		            </div>
+	            
+		            <div class="btn-double align-header">
+						<div>
+							<span class='iconify span-icon-padding' data-icon="octicon:repo-forked" data-inline="false"></span>
+							Fork
+						</div>
+						
+						<div>
+							106
+						</div>
+		            </div>
 	            </div>
           </div>
-	
-			</header>
-			
 			<hr>
-
-			<section>				
+			<div class="width-80-aside" style="display: inline-block;">
 				<div>
-					KnowRe web development curriculum for noobs
-					<nav class="link-list">
-						<ul class = 'repo-status'>
-							<li>
-								<a href="">
-									<div>
-										<span class="iconify" data-icon="octicon:history" data-inline="false"></span>
-										<span>44</span>
-										<span>commits</span>
-									</div>
-								</a>
-						</li>
-							<li>
-								<a href="">
-								<div>
-									<span class="iconify" data-icon="octicon:git-branch" data-inline="false"></span>
-									<span>1</span>
-									<span>branch</span>
-								</div>
-								</a>
-							</li>
-							<li>
-								<a href="">
-								<div>
-									<span class="iconify" data-icon="octicon:tag" data-inline="false"></span>
-									<span>0</span>
-									<span>releases</span>
-								</div>
-								</a>
-							</li>
-							<li>
-								<a href="">
-								<div>
-									<span class="iconify" data-icon="octicon:organization" data-inline="false"></span>
-									<span>2</span>
-									<span>contributors</span>
-								</div>
-								</a>
-							</li>
-	
-						</ul>
-					</nav>
-				</div>
-				
-					<div class="main-option--left">
-						
-						<button class="btn-green">
-							<span class="iconify triangle-down" data-icon="octicon:git-compare" data-inline="false"></span>
-						</button>						
-						
-						<button class="option-btn btn-normal">
-							<span>Branch:</span>
-							<span class="font-bold"><b>2016</b></span>
-							<span class="iconify triangle-down" data-icon="octicon:triangle-down" data-inline="false"></span>
-						</button>
-					WebDevCurriculum / +	
-
-					<button>
-						<span class="iconify triangle-down" data-icon="octicon:list-unordered" data-inline="false"></span>
-					</button>
-					
-					</div>				
-							
-					
-					
-					<table class='file-table'>
-						<tbody>
-							<tr>
-								<td colspan="2", style="color:grey;">This branch is 5 commits ahead of master.</td>
-								<td><span class="iconify" data-icon="octicon:triangle-down" data-inline="false"></span> Pull request <span class="iconify triangle-down" data-icon="octicon:triangle-down" data-inline="false"></span> Compare</td>
-							</tr>
+						<div class="margin-20">KnowRe web development curriculum for noobs</div>
+							<nav>
+								<ul class='repo-status repo-status-detail'>
+									<li>
+										<a href="#">
+										<div>
+											<span class="iconify" data-icon="octicon:history" data-inline="false"></span>
+											<span><b>26</b></span>
+											<span>commits</span>
+										</div>
+										</a>
+									</li>
+									
+									<li>
+										<a href="">
+										<div>
+											<span class="iconify" data-icon="octicon:git-branch" data-inline="false"></span>
+											<span><b>2</b></span>
+											<span>branches</span>
+										</div>
+										</a>
+									</li>
+									<li>
+										<a href="">
+										<div>
+											<span class="iconify" data-icon="octicon:tag" data-inline="false"></span>
+											<span><b>0</b></span>
+											<span>releases</span>
+										</div>
+										</a>
+									</li>
+									<li>
+										<a href="">
+										<div>
+											<span class="iconify" data-icon="octicon:organization" data-inline="false"></span>
+											<span><b>1</b></span>
+											<span>contributors</span>
+										</div>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+		
+				<div>		
+					<div class="flex-spacebtw repo-status horizontal-margin">
+						<div class='align-header'>
+							<div>
+								<button class="btn-green">
+									<span class="iconify" data-icon="octicon:git-compare" data-inline="false"></span>
+								</button>						
 								
-							<tr class="table-blue">
-								<td colspan="3">...</td>
-							</tr>
+								<button class="option-btn btn-normal">
+									<span>Branch:</span>
+									<span class="font-bold"><b>2016</b></span>
+									<span class="iconify" data-icon="octicon:triangle-down" data-inline="false"></span>
+								</button>
+							</div>
 							
-							<tr>
-								<td colspan="2", style="color:grey;"><b style="color:black;">Kibol</b> authored 19 hours ago </td>
-								<td>last commit 5ead7a736</td>
-							</tr>
-							
-										
-							<tr>
-								<td class="folder"><span class="iconify" data-icon="octicon:file-directory" data-inline="false"></span> Part 0. git/Quest 0. Hello, git</td>
-								<td>Quest 0 - Added checklist</td>
-								<td>19 hours age</td>
-							</tr>
-							
-				
-							<tr>
-								<td class="folder"><span class="iconify" data-icon="octicon:file-directory" data-inline="false"></span> old</td>
-								<td>New curriculum 2016 - started</td>
-								<td>5 days age</td>
-							</tr>
-							
-							<tr>
-								<td class="folder" style="color:grey;"><span class="iconify" data-icon="octicon:file" data-inline="false"></span> LICENSE</td>
-								<td>New curriculum 2016 - started</td>
-								<td>5 days ago</td>								
-							</tr>			
-							
-							<tr>
-								<td class="folder" style="color:grey;"><span class="iconify" data-icon="octicon:file" data-inline="false"></span> README.md</td>
-								<td>...</td>
-								<td>19 hours age</td>								
-							</tr>			
-							
-						</tbody>
-					</table>
+							<div class='vertical-margin'>
+								<span>WebDevCurriculum</span>
+								<span class='vertical-margin'>/</span>
+								<span> + </span>
+							</div>
+						</div>
+						<div>
+							<button>
+								<span class="iconify" data-icon="octicon:list-unordered" data-inline="false"></span>
+							</button>
+						</div>
+					</div>				
+				</div>
+			
+				<div>
 					
-					<br>
-
-					<table>
-						<tr>
-							<td>
-								README.md
-							</td>
-						</tr>
+					<header class="main-notification bgcolour-grey">
+								
+						<div class="align-header">
+							<span>
+								This branch is 5 ahead of master.
+							</span>
+						</div>
 						
-						<tr>
-							<td>
-								<h1>KnowRe web development curriculum 2016</h1>
-							</td>
-						</tr>					
-					</table>	
-				<hr>
+						<div class="main-notification--right">
+							<span class="iconify" data-icon="octicon:git-pull-request" data-inline="false"></span> Pull request 
+							<span class="iconify" data-icon="octicon:file" data-inline="flase"></span> Compare
+						</div>
+						
+					</header>
+	
+					<ul class="main-list">
+						
+						<li class="notification">
+							<span class='align-header'>...</span>
+						</li>
+						
+						
+						<li class="bgcolour-grey">
+							<span class='aligh-header'>
+								<img alt='profile-pht'>
+								<span><b>Kibol</b> authored 19 hours ago</span>
+							</span>
+							<a></a>
+							<span>
+								Latest commit <a href="">8a3080e</a>
+							</span>
+								
+						</li>
+						
+						<li>
+							<span class="align-header">
+								<span class="iconify list-icon" data-icon="octicon:file-directory" data-inline="false"></span>
+								<span>
+									<span>Part 0. git /</span>
+									<a class="name-link" href="">Quest 00. Hello, git</a>
+								</span>
+							</span>
+						<a class="commit-link" href="">Quest 0 - Added Checklist</a>
+							<span>19 hours ago</span>
+						</li>
+						
+						<li>
+							<span class="align-header">
+								<span class="iconify list-icon" data-icon="octicon:file-directory" data-inline="false"></span>
+								<span>
+									<span>old</span>
+								</span>
+							</span>
+							<a class="commit-link" href="">New curriculum 2016 - started</a>
+							<span>5 years ago</span>					
+						</li>
+						
+						<li>
+							<span class="align-header">
+								<span class="iconify list-icon" data-icon="octicon:file" data-inline="false"></span>
+								<a class="name-link" href="">LISENCE</a>
+							</span>
+							<a class="commit-link" href="">New curriculum 2016 - started</a>
+							<span>2 years ago</span>
+						</li>
+						
+						<li>
+							<span class="align-header">
+								<span class="iconify list-icon" data-icon="octicon:file" data-inline="false"></span>
+								<a class="name-link" href="">README.md</a>
+							</span>
+							<a class="commit-link" href="">...</a>
+							<span>19 hours ago</span>
+						</li>
+					</ul>
+					
+					<article class="main-article">
+						<h3 class="article-title">
+							<span class="iconify" data-icon="octicon:book" data-inline="false"></span>
+							README.md
+						</h3>
+						<section class="main-content">
+							<h1 class="markdown-h1">KnowRe web development curriculum 2018</h1>
+						</section>
+					</article>	
+	
+				</div>
+			</div>
 				
-				
-			</section>
+			<aside style="display: inline-block;">
+				<div style="display: inline-block;">
+					<nav class="main-link">
+						<ul>
+							<li><a class="link-box" href="javascript:void(0)">
+								<span class="iconify" data-icon="octicon:code" data-inline="false"></span>
+								<span class="link-title">Code</span>
+							</a></li>
+							<li><a class="link-box" href="javascript:void(0)">
+								<span class="iconify" data-icon="octicon:issue-opened" data-inline="false"></span>
+								<span class="link-title">Issues</span>
+								<span class="link-cnt">0</span>
+							</a></li>
+							<li><a class="link-box" href="javascript:void(0)">
+								<span class="iconify" data-icon="octicon:git-pull-request" data-inline="false"></span>
+								<span class="link-title">Pull Requests</span>
+								<span class="link-cnt">1</span>
+							</a></li>
+							<li><a class="link-box" href="javascript:void(0)">
+								<span class="iconify" data-icon="octicon:project" data-inline="false"></span>
+								<span class="link-title">Projects</span>
+								<span class="link-cnt">0</span>
+							</a></li>
+							<li><a class="link-box" href="javascript:void(0)">
+								<span class="iconify" data-icon="octicon:graph" data-inline="false"></span>
+								<span class="link-title">Insights</span>
+							</a></li>
+						</ul>
+					</nav>				
+				</div>
+			</aside>
+		
 		</section>
 
-		<footer class = 'preference'>
+		<section class="width-70" name='footer'>		
+			<footer class='flex-spacebtw align-header'>
+				
 			<nav>
 				<ul>
 					<li>
@@ -273,6 +341,10 @@
 				</ul>
 			</nav>
 
-		</footer>
+		
+			
+			</footer>
+		</section>
+		
 	</body>
 </html>
