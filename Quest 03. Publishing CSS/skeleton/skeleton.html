@@ -7,84 +7,89 @@
 	</head>
 
 	<body>
-		<header class='flex-spacebtw bgcolour-grey height-60'>
-			<div class='flex-spacebtw width-70'>
-				<div class="align-header">
-					
-				<span class="iconify repo-icon" data-icon="octicon:logo-github" data-inline="false"></span>					
-	            <form class="top-nav">
-	               <label for="searchbar">This repository</label>
-	               <input class="none-border-input" placeholder="Search" type="text" name="searchbar" id="searchbar" />
-	            </form>					
-
+		<header>
+			<section class="bgcolour-grey height-60" style="display: flex;">
+				<div class='flex-spacebtw width-70'>
+					<div class="align-header">
 						
-					<nav>
-						<ul class="horizontal-list">
-							<li>Explore</li>
-							<li>Features</li>
-							<li>Enterprise</li>
-							<li>Pricing</li>
-						</ul>
-					</nav>
-				</div>			
-
-				<div>	
-					<button class="btn-green">Sign up</button>
-					<button class='btn-grey'>Sign in</button>
+						<span class="iconify repo-icon" data-icon="octicon:logo-github" data-inline="false"></span>					
+						<form class="top-nav">
+							<label for="searchbar">This repository</label>
+							<input class="none-border-input" placeholder="Search" type="text" name="searchbar" id="searchbar" />
+						</form>					
+	
+							
+						<nav>
+							<ul class="horizontal-list">
+								<li>Explore</li>
+								<li>Features</li>
+								<li>Enterprise</li>
+								<li>Pricing</li>
+							</ul>
+						</nav>
+					</div>			
+	
+					<div>	
+						<button class="btn-green">Sign up</button>
+						<button class='btn-grey'>Sign in</button>
+					</div>
 				</div>
-			</div>
+			</section>
+
+			<section class="border-bottom">
+				<div class="width-70">
+					<div class="flex-spacebtw">
+						<div class='align-header height-60' style="font-size: 25px;">
+							<span class="iconify icon-grey repo-icon" data-icon="octicon:repo" data-inline="false"></span>	
+							<span><a href='#'>KnowRe</a></span> 
+							<span class='vertical-margin'> / </span>
+							<span><a href='#'><b>WebDevCurriculum</b></a></span>
+						</div>
+					
+						<div class='flex-spacebtw align-header'>
+							<div class="btn-double align-header">
+								<div class='btn-grey'>
+									<span class='iconify span-icon-padding' data-icon="octicon:eye" data-inline="false"></span>	       
+									watch
+								</div>
+				       
+						       <div>
+						         19
+						       </div>
+				       
+							</div>
+			      
+							<div class="btn-double align-header">
+							
+								<div class='btn-grey'>
+									<span class='iconify span-icon-padding' data-icon="octicon:star" data-inline="false"></span>
+									Star
+								</div>
+								
+								<div>
+								113
+								</div>
+							</div>
+							
+							<div class="btn-double align-header">
+								<div class='btn-grey'>
+									<span class='iconify span-icon-padding' data-icon="octicon:repo-forked" data-inline="false"></span>
+									Fork
+								</div>
+							
+								<div>
+									106
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			
 		</header>
 		
-		<section class="width-70" style="padding-bottom: 70px;">
-			
-			<div class="flex-spacebtw">
-				<div class='align-header height-60' style="font-size: 25px;">
-					<span class="iconify icon-grey repo-icon" data-icon="octicon:repo" data-inline="false"></span>	
-					<span><a href='#'>KnowRe</a></span> 
-					<span class='vertical-margin'> / </span>
-					<span><a href='#'><b>WebDevCurriculum</b></a></span>
-				</div>
-			
-				<div class='flex-spacebtw align-header'>
-		            <div class="btn-double align-header">
-		              <div class='btn-grey'>
-			            <span class='iconify span-icon-padding' data-icon="octicon:eye" data-inline="false"></span>	              
-		                watch
-		              </div>
-		              
-		              <div>
-		                 19
-		              </div>
-		              
-		            </div>
-	            
-		            <div class="btn-double align-header">
-			            
-			            <div class='btn-grey'>
-				            <span class='iconify span-icon-padding' data-icon="octicon:star" data-inline="false"></span>
-			              Star
-			            </div>
-			            
-						<div>
-							113
-						</div>
-		            </div>
-	            
-		            <div class="btn-double align-header">
-						<div class='btn-grey'>
-							<span class='iconify span-icon-padding' data-icon="octicon:repo-forked" data-inline="false"></span>
-							Fork
-						</div>
-						
-						<div>
-							106
-						</div>
-		            </div>
-	            </div>
-			</div>
+		<section class="width-70" style="padding-bottom: 70px;">			
 
-			<hr>
 			<div class="width-80-aside" style="display: inline-block;">
 				<div>
 						<div class="margin-20">KnowRe web development curriculum for noobs</div>
@@ -146,8 +151,8 @@
 								</button>
 							</div>
 							
-							<div class='vertical-margin'>
-								<span>WebDevCurriculum</span>
+							<div class='vertical-margin' style="font-size: 18px;">
+								<span><a href="#">WebDevCurriculum</a></span>
 								<span class='vertical-margin'>/</span>
 								<span> + </span>
 							</div>
@@ -189,7 +194,7 @@
 								<span>
 									<span>
 										<img src='profile.png' alt='df' border="0" align="absmiddle" class="profile-img padding-right"/>
-										<b>Kibol</b> authored 19 hours ago
+										<b>Kibol </b><span class="icon-grey">authored 19 hours ago</span>
 									</span>
 									
 								</span>
@@ -212,10 +217,10 @@
 								<span class="iconify list-icon" data-icon="octicon:file-directory" data-inline="false"></span>
 								<span>
 									<span>Part 0. git /</span>
-									<a class="name-link" href="">Quest 00. Hello, git</a>
+									<a href="">Quest 00. Hello, git</a>
 								</span>
 							</span>
-						<a class="commit-link" href="">Quest 0 - Added Checklist</a>
+							<span class="icon-grey">Quest 0 - Added Checklist</span>
 							<span>19 hours ago</span>
 						</li>
 						
@@ -223,28 +228,28 @@
 							<span class="align-header">
 								<span class="iconify list-icon" data-icon="octicon:file-directory" data-inline="false"></span>
 								<span>
-									<span>old</span>
+									<span><a href="">old</a></span>
 								</span>
 							</span>
-							<a class="commit-link" href="">New curriculum 2016 - started</a>
+							<span class="icon-grey">New curriculum 2016 - started</span>
 							<span>5 years ago</span>					
 						</li>
 						
 						<li>
 							<span class="align-header">
 								<span class="iconify list-icon" data-icon="octicon:file" data-inline="false"></span>
-								<a class="name-link" href="">LISENCE</a>
+								<a href="">LISENCE</a>
 							</span>
-							<a class="commit-link" href="">New curriculum 2016 - started</a>
+							<span class="icon-grey">New curriculum 2016 - started</span>
 							<span>2 years ago</span>
 						</li>
 						
 						<li>
 							<span class="align-header">
 								<span class="iconify list-icon" data-icon="octicon:file" data-inline="false"></span>
-								<a class="name-link" href="">README.md</a>
+								<a href="">README.md</a>
 							</span>
-							<a class="commit-link" href="">...</a>
+							<span class="icon-grey">...</span>
 							<span>19 hours ago</span>
 						</li>
 					</ul>
@@ -265,40 +270,40 @@
 
 			<aside style="display: inline-block; margin-left: 10px;">
 				<div>
-				    <nav>
-				      <ul class="vert-flexbox-container">
-					      
-				        <li class="active">
-				        	<span class="iconify padding-right" data-icon="octicon:code" data-inline="false"></span>
-				        	<span> Code</span>
-				        </li>
-				        
-				        <li>
-				        	<span class="iconify padding-right" data-icon="octicon:issue-opened" data-inline="false"></span>
+				  <nav>
+				   <ul class="vert-flexbox-container">
+					   
+				    <li class="active">
+				    	<span class="iconify padding-right" data-icon="octicon:code" data-inline="false"></span>
+				    	<span> Code</span>
+				    </li>
+				    
+				    <li>
+				    	<span class="iconify padding-right" data-icon="octicon:issue-opened" data-inline="false"></span>
 							<a href="#">Issues</a>
-				        </li>
-				        
-				        <li class="divider">
-				        	<span class="iconify padding-right" data-icon="octicon:git-pull-request" data-inline="false"></span>
-				        	<a href="#">Pull Requests</a>
+				    </li>
+				    
+				    <li class="divider">
+				    	<span class="iconify padding-right" data-icon="octicon:git-pull-request" data-inline="false"></span>
+				    	<a href="#">Pull Requests</a>
 
-				        </li>
-				        
-				        <li>
-				        	<span class="iconify padding-right" data-icon="octicon:pulse" data-inline="false"></span>
-				        	<a href="#">Pulse</a>
-				        </li>
-				        
-				        <li>
-				        	<span class="iconify padding-right" data-icon="octicon:graph" data-inline="false"></span>
-				        	<a href="#">Graphs</a>
-				        </li>
-				        
-				      </ul>
-				    </nav>
+				    </li>
+				    
+				    <li>
+				    	<span class="iconify padding-right" data-icon="octicon:pulse" data-inline="false"></span>
+				    	<a href="#">Pulse</a>
+				    </li>
+				    
+				    <li>
+				    	<span class="iconify padding-right" data-icon="octicon:graph" data-inline="false"></span>
+				    	<a href="#">Graphs</a>
+				    </li>
+				    
+				   </ul>
+				  </nav>
 				</div>
-			  
-			  
+			 
+			 
 				<div class="clone-options">
 					<p>
 						<b>HTTPS</b>
@@ -307,18 +312,17 @@
 
 
 					<div class='flex-spacebtw align-header'>
-			            <div class="btn-double-reverse align-header">
-			              <div>
-				            <input class='none-border-input' type="text" placeholder="https://github.com"/>
-			              </div>
-			              
-			              <div>
-				                <span class='iconify span-icon-padding' data-icon="octicon:clippy" data-inline="false"></span>
-			              </div>
-			              
-			            </div>
+						<div class="btn-double-reverse align-header">
+							<div>
+								<input class='none-border-input' type="text" placeholder="https://github.com"/>
+							</div>
+							
+							<div>
+								<span class='iconify span-icon-padding' data-icon="octicon:clippy" data-inline="false"></span>
+							</div>
+						</div>
 					</div>
-	            
+	      
 				
 					<p>
 						<span class="icon-grey"> You can clone with </span>
@@ -330,7 +334,7 @@
 						<span class="iconify" data-icon="octicon:unverifed" data-inline="false"></span>
 						
 					</p>
-				
+		
 					<button class="btn btn-grey side-btn" name="clone-desk" type="button">
 						<span class="iconify" data-icon="octicon:desktop-download" data-inline="false"></span> Clone in Desktop 
 					</button>
