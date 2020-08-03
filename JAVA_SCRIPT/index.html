@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Shopping</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+	  <div>
+	  	<img src="img/logo.png" alt='Logo' class='logo' id='logo' onclick="displayList(this.id)">
+	  </div>
+	  
+	  <div>
+		  <button class='btn' id='tshirt' onclick="displayList(this.id)">
+		  	<img src="img/blue_t.png" alt='t-shirt' class='imgBtn'>
+		  </button>
+	
+		  <button id='pants' class='btn' onclick="displayList(this.id)">
+		  	<img src="img/blue_p.png" alt='pants' class='imgBtn'>
+		  </button>
+	
+		  <button id='skirt' class='btn' onclick="displayList(this.id)">
+		  	<img src="img/blue_s.png" alt='skirt' class='imgBtn'>
+		  </button>
+	
+		  <button id='blue' class='btn colorBtn blue' onclick="displayList(this.id)">
+		  	Blue
+		  </button>
+	
+		  <button id='yellow' class='btn colorBtn yellow' onclick="displayList(this.id)">
+		  	Yellow
+		  </button>
+	
+		  <button id='pink' class='btn colorBtn pink' onclick="displayList(this.id)">
+		  	Pink
+		  </button>
+	  </div>
+  	
+	  <ul id='items' class='items'>
+
+	  </ul>
+
+	  
+  </body>
+</html>
