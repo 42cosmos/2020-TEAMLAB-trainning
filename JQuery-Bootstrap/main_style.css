@@ -400,8 +400,14 @@ a.btn-layerClose:hover {
 		display: none;
 		}
 		
+	} 
+
+@media screen and (min-width: 1024px) {
 	.hungry {
-		display: flex;
-		}		
-		
-	}
+		display: none;
+		}
+	} 
+
+
+
+
