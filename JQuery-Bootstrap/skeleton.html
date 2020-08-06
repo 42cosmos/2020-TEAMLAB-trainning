@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/10.0.0/css/fabric.min.css"/>
+		<link rel='stylesheet' href="main_style.css">
+		
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>		
+		
+	</head>
+	<body>		
+		
+		<script>
+			
+			
+			function NumOfChecked() {
+				var number = $("input[name='fileRow']:checked").length;
+				var numOfSelected = ' 개 선택됨'
+				$('.selectednumber').text(number + numOfSelected);				
+			}
+			
+			function classSelected(x) {
+				$(x).parent().parent().toggleClass("selected");	
+			}
+			
+			
+			
+			function isChecked() {
+				$('#removeFirst').removeClass('boring').addClass('displayNone');
+				$('#removeSecond').removeClass('displayNone').addClass('boring');
+				$('#cancel').show();
+				NumOfChecked();
+			}
+					
+			
+			function NotChecked() {				
+				$('#removeSecond').removeClass('boring').addClass('displayNone');
+				$('#removeFirst').removeClass('displayNone').addClass('boring');
+				$('#cancel').hide();
+			}
+			
+
+							
+			
+			$(document).ready(function() {
+				$("input:checkbox").on('click', function() {
+					if ($("input[type=checkbox]").is(":checked")) {
+						isChecked();
+						classSelected($(this));						
+					} 
+					else {
+						NotChecked();
+						classSelected($(this));
+						} 
+					});
+					
+					
+					
+					$('.selectednumber').on('click', function() {
+						var $chkList = $("input[name='fileRow']:checked");
+						
+						$.map($chkList, function(n){
+							return classSelected(n); 
+							});
+						
+						NotChecked();
+						$("input[type=checkbox]").prop("checked",false);
+
+						});
+					
+					
+					
+					$("#allChecked").click(function(){
+						$.map($("input[type=checkbox]"), function(n){
+							return classSelected(n); 
+							});
+						
+						if($("#allChecked").prop("checked")) {
+							$("input[type=checkbox]").prop("checked",true);
+							isChecked();
+						} 
+						else 
+						{
+							$("input[type=checkbox]").prop("checked",false);
+							NotChecked();							
+						} 
+					});
+					
+					
+					
+					$("input:checkbox").on('click', function() {
+						if ($("input[name='fileRow']:checked").length <= 0 && $("input[id='allChecked']").is(":checked")) {
+							$("input[type=checkbox]").prop("checked",false);
+							NotChecked();
+						}
+						
+						else {
+							// pass
+						}
+						
+					});
+					
+
+					
+				    $('#Deleted').click(function(){
+				        if(confirm("삭제하시겠습니까?")){
+				            $("input[name='fileRow']:checked").each(function(){
+				                $(this).parent().parent().remove();
+				                $("input[type=checkbox]").prop("checked",false);
+				            });
+				        }else{
+				            return false;
+				        }
+				    });
+				    
+				    				    
+				
+					
+			});
+
+	
+
+		</script>	 
+		
+		<header>
+			<div class='header-bar'>
+				<div>
+					<div style="display: table; padding: 0 20px;">
+						<div style='display: table-cell; vertical-align: middle; align-items: center;'>	
+							<i class="ms-Icon ms-Icon--Waffle" style="font-size: 16px; color: white;"></i>
+						</div>
+					</div>
+					
+					
+					<div class="">
+						<a href='#'>Onedrive</a>
+					</div>
+				</div>
+				
+				<div class="" style='color: white;'>
+					<i class="ms-Icon ms-Icon--Ringer icon-centre"></i>					
+					<i class="ms-Icon ms-Icon--Settings icon-centre"></i>					
+					<i class="ms-Icon ms-Icon--Help icon-centre" style="font-family: FabricMDL2Icons;"></i>
+					<i class="ms-Icon ms-Icon--Contact icon-centre"></i>
+				</div>
+				
+			</div>
+		</header>
+
+		<section class='main'>
+			<header class='outer_btn_right sidebar' style="font-size: 13px;">
+				<div class="sidebarList">
+					<div class="" style="font-weight: 900;">
+						Jane Doe
+					</div>
+
+					<a href='#'>						
+					<div class="sidebar-dsgn">
+							<span>
+								<i class="ms-Icon ms-Icon--CollapseMenu" style="display: inline;"></i>
+								my Files
+							</span>
+					</div>
+					</a>
+					
+					<a href='#'>						
+					<div class="sidebar-dsgn">
+							<span>
+								<i class="ms-Icon ms-Icon--CollapseMenu" style="display: inline;"></i>
+								Recent Files
+							</span>
+					</div>
+					</a>
+					
+					<a href='#'>						
+					<div class="sidebar-dsgn">
+							<span>
+								<i class="ms-Icon ms-Icon--CollapseMenu" style="display: inline;"></i>
+								Shared
+							</span>
+					</div>
+					</a>
+					
+					<a href='#'>						
+					<div class="sidebar-dsgn">
+							<span>
+								<i class="ms-Icon ms-Icon--CollapseMenu" style="display: inline;"></i>
+								Rubbish bin
+							</span>
+					</div>
+					</a>
+					
+					<div class="">
+						blah blah
+					</div>
+				</div>
+				
+				<div class='bd-black'>
+					<div class="bd-red sidebar-dsgn">
+						<a href="#">Download Onedrive App</a>
+					</div>
+					
+					<div class="bd-red sidebar-dsgn">
+						<a href="#">Go Back to Classic Onedrive</a>
+					</div>
+				</div>
+				
+			</header>
+
+			<section style="width: 100%;">
+				<div class="fileBar">
+					<div class='SelectFiles'>
+						<div class='boring' id='removeFirst'>
+
+							<div class="listUnder1024 hungry">
+								<button class="ms-Icon ms-Icon--CollapseMenu font2blue"></button>
+							</div>
+							
+
+							<div class="bd-red">
+								<span class="ms-Icon ms-Icon--CollapseMenu font2blue"></span>
+								<span class="">새로 만들기</span>
+								<span class="ms-Icon ms-Icon--ChevronDown"></span>
+							</div>
+							
+							<div class="bd-red">
+								<span class="ms-Icon ms-Icon--Upload font2blue"></span>
+								<span class="">업로드</span>
+								<span class="ms-Icon ms-Icon--ChevronDown"></span>
+							</div>
+						
+							<div class="bd-red">
+								<span class="ms-Icon ms-Icon--SyncToPC font2blue"></span>
+								<span class="">동기화</span>
+								<span class="ms-Icon ms-Icon--ChevronDown"></span>
+							</div>
+						
+							<div class="bd-red">
+								<span class="ms-Icon ms-Icon--SyncToPC font2blue"></span>
+								<span class="">자동화</span>
+								<span class="ms-Icon ms-Icon--ChevronDown"></span>
+							</div>
+						</div>
+						
+						<div class="displayNone" id='removeSecond'>	
+							<div class="bd-red">
+								<span class="ms-Icon ms-Icon--CollapseMenu font2blue"></span>
+								<span class="">공유</span>
+								<span class="ms-Icon ms-Icon--ChevronDown"></span>
+							</div>
+							
+							<div class="bd-red">
+								<span class="ms-Icon ms-Icon--Upload font2blue"></span>
+								<span class="">링크 복사</span>
+								<span class="ms-Icon ms-Icon--ChevronDown"></span>
+							</div>
+						
+							<div class="bd-red">
+								<span class="ms-Icon ms-Icon--SyncToPC font2blue"></span>
+								<span class="">파일 요청</span>
+								<span class="ms-Icon ms-Icon--ChevronDown"></span>
+							</div>
+						
+							<div class="bd-red">
+								<span class="ms-Icon ms-Icon--SyncToPC font2blue"></span>
+								<span class="">다운로드</span>
+								<span class="ms-Icon ms-Icon--ChevronDown"></span>
+							</div>
+							
+							<div class="listUnder1024 hungry">
+								<button class="ms-Icon ms-Icon--More"></button>
+							</div>
+							
+							
+							<div class='bd-red outer_btn_right'>
+																
+								<div class="bd-red" id="Deleted">
+									<span class="ms-Icon ms-Icon--CollapseMenu font2blue"></span>
+									<span class="">삭제</span>
+									<span class="ms-Icon ms-Icon--ChevronDown"></span>
+								</div>
+								
+								<div class="bd-red">
+									<span class="ms-Icon ms-Icon--CollapseMenu font2blue"></span>
+									<span class="">이름 바꾸기</span>
+									<span class="ms-Icon ms-Icon--ChevronDown"></span>
+								</div>
+								
+								<div class="bd-red">
+									<span class="ms-Icon ms-Icon--CollapseMenu font2blue"></span>
+									<span class="">자동화</span>
+									<span class="ms-Icon ms-Icon--ChevronDown"></span>
+								</div>
+								
+								
+								<div class="bd-red">
+									<span class="ms-Icon ms-Icon--CollapseMenu font2blue"></span>
+									<span class="">이동</span>
+									<span class="ms-Icon ms-Icon--ChevronDown"></span>
+								</div>
+								
+								<div class="bd-red">
+									<span class="ms-Icon ms-Icon--CollapseMenu font2blue"></span>
+									<span class="">복사</span>
+									<span class="ms-Icon ms-Icon--ChevronDown"></span>
+								</div>
+							</div>														
+						</div>
+					</div>
+						<div class="mt-3 boring"> 			
+							<div class="dropdown bd-red sorted"> 
+								<a class="bd-red" href="#layer1" data-toggle="dropdown" style="font-weight: normal; color: #5c5c5c;">
+									<span class="ms-Icon ms-Icon--SortLines font2blue"></span>
+									<span class="">Sort</span>
+									<span class="ms-Icon ms-Icon--ChevronDown"></span>
+								</a> 
+								
+								<div class="tablemenu dropdown-menu"> 
+									<div class="trowa">
+										<a class="tcell menu" href="#">형식</a>
+									</div>
+									
+									<div class="trowa">
+										<a class="tcell" href="#">이름</a> 
+									</div>
+									
+									<div class="trowa">
+										<a class="tcell" href="#">수정된 날짜</a> 
+									</div>
+
+									<div class="trowa">
+										<a class="tcell" href="#">수정한 사람</a> 
+									</div>
+									
+									<div class="trowa borderBottom">
+										<a class="tcell" href="#">파일 크기</a> 
+									</div>
+									
+									<div class="trowa">
+										<a class="tcell" href="#">오름차순</a> 
+									</div>
+									
+									<div class="trowa">
+										<a class="tcell" href="#">내림차순</a> 
+									</div>
+									
+									
+								</div> 
+							</div> 
+							
+						<div class="bd-red" id='cancel' style="display: none;">
+							<span class="ms-Icon ms-Icon--Cancel font2blue"></span>
+							<span class='selectednumber'></span>
+							<span class="ms-Icon ms-Icon--ChevronDown"></span>
+						</div>
+						
+						<div class="bd-red">
+							<span class="ms-Icon ms-Icon--Heart font2blue"></span>
+							<span class="ms-Icon ms-Icon--ChevronDown"></span>
+						</div>
+						
+						<div class="bd-red">
+							<span class="ms-Icon ms-Icon--Info font2blue"></span>
+						</div>
+					</div>					
+				</div>
+				
+				<div class="fileList">
+					<div class="fileListMargin">
+						FILES
+					</div>
+									
+					<div class="table">
+						<div class="trow borderBottom" style="background-color: white;">
+							<label class="containerTmp tcellhead">
+								<input type="checkbox" id="allChecked">
+								<span class="checkmark"></span>
+							</label>
+							
+							<div class="tcellicon">
+								<img src="https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20200708.002/assets/item-types/20/folder.svg" alt="" class='fixImg' style='vertical-align:middle;'>
+							</div>
+							
+							
+							<div class="tcellname">
+								<span class="fileName">
+									Name
+								</span>
+							</div>
+							
+							<div class="tcell tcellwidth-130">
+								<span>
+									Modified Date
+								</span>
+							</div>
+							
+							<div class="tcell tcellwidth-130">
+								<span>
+									Modified by
+								</span>
+							</div>
+							
+							<div class=" tcell tcellwidth-130">
+								<span>
+									File size
+								</span>
+							</div>
+							
+							<div class="tcellLast tcellwidth-130" style="background-color: white; !important">
+								<span>
+									Shared
+								</span>
+							</div>
+						</div>
+						
+						<div class="trow borderBottom">
+							<label class="containerTmp tcellhead">
+								<input type="checkbox" name="fileRow">
+								<span class="checkmark"></span>
+							</label>					
+
+							<div class="tcellicon">
+								<img src="https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20200708.002/assets/item-types/20/folder.svg" alt="" class='fixImg' style='vertical-align:middle;'>
+							</div>
+
+							<div class="tcellname">
+								<div>
+									<span class="fileName">
+										a_file_name
+									</span>
+									
+								</div>
+							</div>
+							
+							<div class="tcell tcellwidth-130">
+								<span>
+									2020-01-01
+								</span>
+							</div>
+							
+							<div class="tcell tcellwidth-130" >
+								<span>
+									Jane Doe
+								</span>
+							</div>
+							
+							<div class="tcell tcellwidth-130">
+								<span>
+									2개 항목
+								</span>
+							</div>
+							
+							<div class="tcellLast tcellwidth-130">
+								<span>
+									Shared
+								</span>
+							</div>
+						</div>						
+						<div class="trow borderBottom">
+							<label class="containerTmp tcellhead">
+								<input type="checkbox" name="fileRow">
+								<span class="checkmark"></span>
+							</label>
+							
+							<div class="tcellicon">
+								<img src="https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20200708.002/assets/item-types/20/folder.svg" alt="" class='fixImg' style='vertical-align:middle;'>
+							</div>
+							
+							<div class="tcellname">
+								<div>
+									<span class="fileName">
+										J_file_name
+									</span>
+								</div>
+							</div>
+							
+							<div class="tcell tcellwidth-130">
+								<span>
+									2020-01-01
+								</span>
+							</div>
+							
+							<div class="tcell tcellwidth-130">
+								<span>
+									Jane Doe
+								</span>
+							</div>
+							
+							<div class="tcell tcellwidth-130">
+								<span>
+									2개 항목
+								</span>
+							</div>
+							
+							<div class="tcellLast tcellwidth-130">
+								<span>
+									Shared
+								</span>
+							</div>
+						</div>
+						<div class="trow borderBottom">
+							<label class="containerTmp tcellhead">
+								<input type="checkbox" name="fileRow">
+								<span class="checkmark"></span>
+							</label>
+							
+							<div class="tcellicon">
+								<img src="https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20200708.002/assets/item-types/20/docx.svg" alt="" class="fixImg" style='vertical-align:middle;'>
+							</div>
+							
+							
+							
+							<div class="tcellname">
+								<div>
+									<span class="fileName">
+										h_file_name
+									</span>
+								</div>
+							</div>
+							
+							<div class="tcell tcellwidth-130">
+								<span>
+									2020-01-01
+								</span>
+							</div>
+							
+							<div class="tcell tcellwidth-130">
+								<span>
+									Jane Doe
+								</span>
+							</div>
+							
+							<div class="tcell tcellwidth-130">
+								<span>
+									123 KB
+								</span>
+							</div>
+							
+							<div class="tcellLast tcellwidth-130">
+								<span>
+									Shared
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+
+	</body>
+</html>
