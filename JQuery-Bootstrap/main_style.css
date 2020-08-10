@@ -14,49 +14,12 @@ html, body {
 
 
 
-.sidebar {
-/* 	border: 3px dotted aqua; */
-	width: 200px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;	
-	background-color: var(--sidebar-grey);
-}
-
-
-.sidebarList div {
-	padding: 8px 15px;
-}
-
-
-.sidebarList > div {
-	padding: 11px 15px;
-}
-
-
-
-
-
-.sidebar-dsgn span {
-	text-decoration: none;
-	color: black;
-
-}
-
-
-.sidebar-dsgn span a:hover {
-	text-decoration: none;	
-	background-color: #dddddd;
-	color: #3ca1ff;
-}
-
-
 
 
 .fileBar {
 	background-color: var(--sidebar-grey);
-	display: flex;
-	justify-content: space-between;
+/* 	display: flex; */
+/* 	justify-content: space-between; */
 }
 
 
@@ -66,18 +29,6 @@ html, body {
 
 
 
-.listUnder1024 {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	padding: 14px;
-	padding-left: 0;
-}
-
-.listUnder1024 button {
-	border: none;
-	background-color: var(--sidebar-grey);
-}
 
 
 .bd-red {
@@ -200,10 +151,8 @@ html, body {
 
 
 .tcellname {
-/* 	border: 2px solid red; */
 	display: table-cell;
-/* 	padding-left: 15px; */
-	width: 200px;
+/* 	width: 200px; */
 }
 
 
@@ -370,7 +319,6 @@ a.btn-layerClose:hover {
 
 
 .trowa {
-/* 	border: 3px solid pink; */
 	padding: 8px 35px;
 	color: var(--default-font-color);
 }
@@ -392,22 +340,185 @@ a.btn-layerClose:hover {
 }
 
 
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
 
 
+button {
+	border: none;
+	background-color: var(--sidebar-grey);
+}
 
-@media screen and (max-width: 1024px) {
-	.outer_btn_right {
+
+@media all and (min-width: 1024px) {
+	.hungry, .more-icon {
+		display: none;
+		}
+
+	 
+	.sidebarList div {
+		padding: 8px 15px;
+	}
+	
+	
+	.sidebarList > div {
+		padding: 11px 15px;
+	}
+	
+	.sidebar {
+		width: 200px;
+	}
+	
+	.listUnder1024 {
+		display: none;
+	}
+		
+} 
+
+
+@media screen and (min-width: 414px) and (max-width: 1024px) {
+	.listUnder1024 {
+		display: flex;
+/* 		flex-direction: row; */
+		align-items: center;
+/* 		padding: 14px; */
+		padding-left: 0;
+	}
+	
+	
+	
+	.outer_btn_right, .more-icon {
 		display: none;
 		}
 		
-	} 
+	  
+	.sidebarList div {
+		padding: 8px 15px;
+	}
+	
+	
+	.sidebarList > div {
+		padding: 11px 15px;
+	}
+	  
+	#sidebar {
+		margin-left: -17rem;
+	}
+	
+	  
+	#sidebar.active {
+		margin-left: 0;
+	}
+	  
+	#content {
+		width: 100%;
+		margin: 0;
+	}
+	  
+	#content.active {
+	    margin-left: 17rem;
+	    width: calc(100% - 17rem);
+	}
+	
+	.fileBar {
+		display: flex;
+	}
 
-@media screen and (min-width: 1024px) {
-	.hungry {
+} 
+
+
+
+@media screen and (max-width: 414px) {
+	.asdf {
 		display: none;
-		}
-	} 
+	}
+	
+	.sidebarList div {
+		padding: 17rem 25rem;
+	}
+	
+	
+	.sidebarList > div {
+		padding: 11px 15px;
+	}
+	
+	
+	#sidebar {
+		margin-left: -17rem;
+	}
+	
+	  
+	#sidebar.active {
+		margin-left: 0;
+	}
+	  
+	#content {
+		width: 100%;
+		margin: 0;
+	}
+	  
+	#content.active {
+	    margin-left: 40rem;
+	    width: calc(100% - 40rem);
+	}
+	
+	.fileBar {
+		display: flex;
+	}
+	
+	.fileList .tcell {
+		display: none;
+	}
+	
+	.fileList .tcellLast {
+		display: none;
+	}
+	
+}
+
+
+.page-content {
+	transition: all 0.4s;
+}
+
+
+
+.sidebar {
+/* 	border: 3px dotted aqua; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;	
+	background-color: var(--sidebar-grey);
+	transition: all 0.4s;	
+}
 
 
 
 
+
+
+.sidebar-dsgn span {
+	text-decoration: none;
+	color: black;
+
+}
+
+
+.sidebar-dsgn span a:hover {
+	text-decoration: none;	
+	background-color: #dddddd;
+	color: #3ca1ff;
+}
+
+
+
+.SelectFiles{
+	display: flex;
+	justify-content: space-between;
+}
