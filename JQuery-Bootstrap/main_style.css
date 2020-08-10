@@ -18,8 +18,11 @@ html, body {
 
 .fileBar {
 	background-color: var(--sidebar-grey);
-/* 	display: flex; */
-/* 	justify-content: space-between; */
+}
+
+.fileBar > div:first-child {
+	padding: 0px 10px;
+	margin-left: 10px;
 }
 
 
@@ -45,7 +48,7 @@ html, body {
 }
 
 
-.bd-red:hover {
+.hover-tmp:hover, .bd-red:hover {
 	background-color: #e9e9e9;
 }
 
@@ -76,7 +79,7 @@ html, body {
 	height: calc(100% - 50px);
 	margin: 0;
 	display: flex;
-	flex-direction: row;
+/* 	flex-direction: row; */
 }
 
 
@@ -232,7 +235,7 @@ html, body {
 	padding-right: 15px;
 }
 
-/* Hide the browser's default checkbox */
+
 .containerTmp input {
   opacity: 0;
   cursor: pointer;
@@ -356,6 +359,51 @@ button {
 }
 
 
+
+
+
+.sidebar {
+    top: 90px;
+    left: 600px;
+    width: 250px;
+	background-color: var(--sidebar-grey);
+    position: flex;
+    flex-direction: column;
+	justify-content: space-between;	        
+}
+
+
+
+.sidebar-dsgn span {
+	text-decoration: none;
+	color: black;
+
+}
+
+
+.sidebar-dsgn span a:hover {
+	text-decoration: none;	
+	background-color: #dddddd;
+	color: #3ca1ff;
+}
+
+
+
+.SelectFiles{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.listUnder1024 {
+		display: flex;
+		align-items: center;
+/* 		padding-left: 0; */
+	}
+
+
+
 @media all and (min-width: 1024px) {
 	.hungry, .more-icon {
 		display: none;
@@ -370,10 +418,7 @@ button {
 	.sidebarList > div {
 		padding: 11px 15px;
 	}
-	
-	.sidebar {
-		width: 200px;
-	}
+
 	
 	.listUnder1024 {
 		display: none;
@@ -383,17 +428,9 @@ button {
 
 
 @media screen and (min-width: 414px) and (max-width: 1024px) {
-	.listUnder1024 {
-		display: flex;
-/* 		flex-direction: row; */
-		align-items: center;
-/* 		padding: 14px; */
-		padding-left: 0;
-	}
 	
 	
-	
-	.outer_btn_right, .more-icon {
+	.sidebar, .outer_btn_right, .more-icon {
 		display: none;
 		}
 		
@@ -435,7 +472,7 @@ button {
 
 
 @media screen and (max-width: 414px) {
-	.asdf {
+	.sidebar, .asdf {
 		display: none;
 	}
 	
@@ -483,42 +520,86 @@ button {
 }
 
 
+.sidebar-view{
+	transition: transform 0.3s ease-in-out;	
+    display: block;
+}
+
+
+
+
 .page-content {
 	transition: all 0.4s;
 }
 
 
 
-.sidebar {
-/* 	border: 3px dotted aqua; */
+
+.fileinfo {
+    position: fixed;
+    right:0;
+    top: 90px;
+    width: 250px;
+    height: calc(100vh - 70px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+	background-color: var(--sidebar-grey);	
+	overflow: auto;	
+	border: 1px solid var(--sidebar-grey);
+}
+
+.fileinfo-view {
+    transform: translateX(0);
+}
+
+
+.fileDetails {
+	margin-left: 0 !important;	
+}
+
+
+
+.fileinfo_header {
+/* 	margin-bottom: 1rem; */
+}
+
+.qwer div {
+	background-color: white;
+	height: 50px;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;	
-	background-color: var(--sidebar-grey);
-	transition: all 0.4s;	
+	align-items: center;
+	padding-left: 10px;
 }
 
 
 
-
-
-
-.sidebar-dsgn span {
-	text-decoration: none;
-	color: black;
-
+.tmp1 {
+	background-color: var(--sidebar-grey) !important;
 }
 
 
-.sidebar-dsgn span a:hover {
-	text-decoration: none;	
-	background-color: #dddddd;
-	color: #3ca1ff;
+.tmp2 {
+	margin: 1rem 1rem;
+}
+
+.fileDetails_Date {
+	background-color: white;
+/* 	border: 1px solid blue; */
+	height: 100%;
+}
+
+.fileDetails_Date button {
+	background-color: white;
 }
 
 
+.fileDetails_Date div {
+	padding-left: 10px;
+}
 
-.SelectFiles{
+.fileDetails_Date > div:first-child {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	padding: 0;
+	margin-bottom: 2rem;
 }

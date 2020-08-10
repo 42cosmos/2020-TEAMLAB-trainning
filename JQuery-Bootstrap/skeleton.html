@@ -44,7 +44,7 @@
 				$('#removeFirst').removeClass('displayNone').addClass('boring');
 				$('#cancel').hide();
 			}
-			
+						
 
 							
 			
@@ -62,74 +62,86 @@
 					
 					
 					
-					$('.selectednumber').on('click', function() {
-						var $chkList = $("input[name='fileRow']:checked");
-						
-						$.map($chkList, function(n){
-							return classSelected(n); 
-							});
-						
-						NotChecked();
-						$("input[type=checkbox]").prop("checked",false);
-
+				$('.selectednumber').on('click', function() {
+					var $chkList = $("input[name='fileRow']:checked");
+					
+					$.map($chkList, function(n){
+						return classSelected(n); 
 						});
 					
-					
-					
-					$("#allChecked").click(function(){
-						$.map($("input[type=checkbox]"), function(n){
-							return classSelected(n); 
-							});
-						
-						if($("#allChecked").prop("checked")) {
-							$("input[type=checkbox]").prop("checked",true);
-							isChecked();
-						} 
-						else 
-						{
-							$("input[type=checkbox]").prop("checked",false);
-							NotChecked();							
-						} 
-					});
-					
-					
-					
-					$("input:checkbox").on('click', function() {
-						if ($("input[name='fileRow']:checked").length <= 0 && $("input[id='allChecked']").is(":checked")) {
-							$("input[type=checkbox]").prop("checked",false);
-							NotChecked();
-						}
-						
-						else {
-							// pass
-						}
-						
-					});
-					
+					NotChecked();
+					$("input[type=checkbox]").prop("checked",false);
 
-					
-				    $('#Deleted').click(function(){
-				        if(confirm("삭제하시겠습니까?")){
-				            $("input[name='fileRow']:checked").each(function(){
-				                $(this).parent().parent().remove();
-				                $("input[type=checkbox]").prop("checked",false);
-				            });
-				        }else{
-				            return false;
-				        }
-				    });
-				    
-					$(function() {
-					  $('.ms-Icon--CollapseMenu').on('click', function() {
-					    $('#sidebar, #content').toggleClass('active');
-					  });
 					});
+				
+				
+				
+				$("#allChecked").click(function(){
+					$.map($("input[type=checkbox]"), function(n){
+						return classSelected(n); 
+						});
 					
-					$('.button-collapse').sideNav2('show');
-					// Hide sideNav
-					$('.button-collapse').sideNav2('hide');					
+					if($("#allChecked").prop("checked")) {
+						$("input[type=checkbox]").prop("checked",true);
+						isChecked();
+					} 
+					else 
+					{
+						$("input[type=checkbox]").prop("checked",false);
+						NotChecked();							
+					} 
+				});
+				
+				
+				
+				$("input:checkbox").on('click', function() {
+					if ($("input[name='fileRow']:checked").length <= 0 && $("input[id='allChecked']").is(":checked")) {
+						$("input[type=checkbox]").prop("checked",false);
+						NotChecked();
+					}
 					
+					else {
+						// pass
+					}
 					
+				});
+				
+
+				
+			    $('#Deleted').click(function(){
+			        if(confirm("삭제하시겠습니까?")){
+			            $("input[name='fileRow']:checked").each(function(){
+			                $(this).parent().parent().remove();
+			                $("input[type=checkbox]").prop("checked",false);
+			            });
+			        }else{
+			            return false;
+			        }
+			    });
+			    
+				$('#sidebarCollapse').click(function(){
+				    $('.sidebar').toggleClass('sidebar-view');
+				  });					
+				
+				$('.ms-Icon--Info').click(function(){
+					var $number = $("input[name='fileRow']:checked").length;					var $typeoffile = `<div>asdf</div>`;
+					var $editeddate = `<div>asdf</div>`
+					
+					if ($number < 2) {
+						$('.fileinfo').toggleClass("fileinfo-view");
+						$('.TypeofFile').after($typeoffile);
+						$('.EditedDate').after($editeddate);
+					}
+					
+					else {
+						$(x).parent().parent().removeClass("fileinfo");
+					}
+				});
+					
+// 				    $('.fileinfo').toggleClass('fileinfo-view');
+// 				  });
+				  	  
+					  
 			});
 
 	
@@ -171,7 +183,7 @@
 		</header>
 
 		<section class='main'> <!--main-->
-			<header class=' vertical-nav sidebar' style="font-size: 13px;"  id="sidebar">
+			<header class='sidebar' style="font-size: 13px;">
 				<div class="sidebarList">
 					
 					<div class="nav-item" style="font-weight: 900;">
@@ -219,32 +231,24 @@
 						blah blah
 					</div>
 				</div>
-				
-				<div class='bd-black nav-item'>
-					<div class="bd-red sidebar-dsgn">
-						<a href="#" class="nav-link">Download Onedrive App</a>
-					</div>
-					
-					<div class="bd-red sidebar-dsgn">
-						<a href="#" class="nav-link">Go Back to Classic Onedrive</a>
-					</div>
-				</div>
+
 				
 			</header>
 
-			<section style="width: 100%;" class='page-content'>
+			<section style="width: 100%;">
 				<div class="fileBar">
-						<div class="listUnder1024 bd-red">
-							<button class="ms-Icon ms-Icon--CollapseMenu font2blue" id='sidebarCollapse'></button>
+					<div class="listUnder1024 hover-tmp">
+						<div>
+							<span class="ms-Icon ms-Icon--CollapseMenu font2blue" id='sidebarCollapse'></span>
 						</div>
-						
-						<div class="dropdown bd-red more-icon">
-							<a class="bd-red" href="#layer1" data-toggle="dropdown" style="font-weight: normal; color: #5c5c5c;">
-								<span class="ms-Icon ms-Icon--More"></span>
-							</a> 
-						</div>
-						
-						
+					</div>
+					
+					<div class="dropdown bd-red more-icon">
+						<a class="bd-red" href="#layer1" data-toggle="dropdown" style="font-weight: normal; color: #5c5c5c;">
+							<span class="ms-Icon ms-Icon--More"></span>
+						</a> 
+					</div>
+
 					<div class='SelectFiles'>
 						<div class="asdf">	
 							<div class='boring' id='removeFirst'>							
@@ -273,11 +277,6 @@
 								</div>
 							</div>
 							<div class="displayNone" id='removeSecond'>	
-								<div class="listUnder1024 hungry">
-									<button class="ms-Icon ms-Icon--CollapseMenu font2blue"></button>
-								</div>
-															
-								
 								<div class="bd-red">
 									<span class="ms-Icon ms-Icon--CollapseMenu font2blue"></span>
 									<span class="">공유</span>
@@ -343,7 +342,7 @@
 							</div>
 						</div>						
 						
-					<div class="mt-3 boring"> 			
+						<div class="mt-3 boring"> 			
 							<div class="dropdown bd-red sorted"> 
 								<a class="bd-red" href="#layer1" data-toggle="dropdown" style="font-weight: normal; color: #5c5c5c;">
 									<span class="ms-Icon ms-Icon--SortLines font2blue"></span>
@@ -399,16 +398,14 @@
 							<span class="ms-Icon ms-Icon--Info font2blue"></span>
 						</div>
 					</div>					
-
-
 					</div>					
 				</div>
-				
+
 				<div class="fileList">
 					<div class="fileListMargin">
 						FILES
 					</div>
-									
+
 					<div class="table">
 						<div class="trow borderBottom" style="background-color: white;">
 							<label class="containerTmp tcellhead">
@@ -583,8 +580,68 @@
 						</div>
 					</div>
 					
-					<div style="border: 1px solid red;">
+					<div class='fileinfo fileinfo-view'>
+						<div class='qwer'>
+							<div class="fileinfo_header">
+								<div class=''>
+									<img src="https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20200708.002/assets/item-types/20/folder.svg" alt="" class='fixImg justify-content-center align-self-center' style='border: 1px solid red;'>
+									<span class='fileName'> asdf </span>
+								</div>
+							</div>
+							
+							<div class='tmp1 text-*-left font-weight-bolder' style='font-size: 15px;'> 활동 </div>
+							
+							<div class='tmp1 text-*-left font-weight-bolder' style='padding-left: 20px; height: 20px;'> 지난달 </div>
+							
+							<div class='tmp2'>
+								<div>
+									asdf
+								</div>
+							</div>
+
+
+							<div class='tmp2'>
+								<div>
+									asdf
+								</div>
+							</div>
+						</div>
+						
+						<div class='fileDetails_Date'>
+							<div>
+								<button>
+									<div><i class="ms-Icon ms-Icon--CollapseMenu font2blue" style="display: inline;"></i></div>
+									<span> 추가 세부 정보</span>
+								</button>
+							</div>
+
+							<div>
+								<div class='TypeofFile'>
+									유형
+								</div>
+								
+<!--
+								<div>
+									1234-12-12
+								</div>
+-->
+								
+								<div class='EditedDate'>
+									수정한 날짜
+								</div>
+<!--
+								
+								<div>
+								</div>
+-->
+							</div>
+							
+						</div>
+						
+						
+					</div>
 					
+
 				</div>
 			</section> 
 		</section>
