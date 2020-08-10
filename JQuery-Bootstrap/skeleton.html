@@ -119,27 +119,43 @@
 			        }
 			    });
 			    
+				
+				
 				$('#sidebarCollapse').click(function(){
 				    $('.sidebar').toggleClass('sidebar-view');
 				  });					
 				
+								
+// 				fileName-info
 				$('.ms-Icon--Info').click(function(){
-					var $number = $("input[name='fileRow']:checked").length;					var $typeoffile = `<div>asdf</div>`;
-					var $editeddate = `<div>asdf</div>`
+					var $checked = $("input[name='fileRow']:checked")
+					var $editeddate = $checked.parent().siblings('.editedDate').text();
+					var $filesize = $checked.parent().siblings('.fileSize').text();
+					var $filename = $checked.parent().siblings('.tcellname').text(); 
+					var $number = $("input[name='fileRow']:checked").length;		
+					
+					$(".FileSize, .fileName-info, .EditedDate").empty();
+					$('.fileinfo').css("display", "");
+					
 					
 					if ($number < 2) {
 						$('.fileinfo').toggleClass("fileinfo-view");
-						$('.TypeofFile').after($typeoffile);
-						$('.EditedDate').after($editeddate);
+						$('.EditedDate').append($editeddate);
+						$('.fileName-info').append($filename);
+						
+						if ($filesize.endsWith("항목")) {
+							$('.FileSize').append('폴더');
+						}
+						
+						else {
+							$('.FileSize').append($filesize);
+						}
 					}
 					
 					else {
-						$(x).parent().parent().removeClass("fileinfo");
+						$('.fileinfo').css("display", "none");
 					}
 				});
-					
-// 				    $('.fileinfo').toggleClass('fileinfo-view');
-// 				  });
 				  	  
 					  
 			});
@@ -459,20 +475,9 @@
 								<img src="https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20200708.002/assets/item-types/20/folder.svg" alt="" class='fixImg' style='vertical-align:middle;'>
 							</div>
 
-							<div class="tcellname">
-								<div>
-									<span class="fileName">
-										a_file_name
-									</span>
-									
-								</div>
-							</div>
+							<div class="tcellname"><div><span class="fileName">A_file_name</span></div></div>
 							
-							<div class="tcell tcellwidth-130">
-								<span>
-									2020-01-01
-								</span>
-							</div>
+							<div class="tcell tcellwidth-130 editedDate"><span>2020-01-01</span></div>
 							
 							<div class="tcell tcellwidth-130" >
 								<span>
@@ -480,11 +485,7 @@
 								</span>
 							</div>
 							
-							<div class="tcell tcellwidth-130">
-								<span>
-									2개 항목
-								</span>
-							</div>
+							<div class="tcell tcellwidth-130 fileSize"><span>100개 항목</span></div>
 							
 							<div class="tcellLast tcellwidth-130">
 								<span>
@@ -502,19 +503,9 @@
 								<img src="https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20200708.002/assets/item-types/20/folder.svg" alt="" class='fixImg' style='vertical-align:middle;'>
 							</div>
 							
-							<div class="tcellname">
-								<div>
-									<span class="fileName">
-										J_file_name
-									</span>
-								</div>
-							</div>
+							<div class="tcellname"><div><span class="fileName">J_file_name</span></div></div>
 							
-							<div class="tcell tcellwidth-130">
-								<span>
-									2020-01-01
-								</span>
-							</div>
+							<div class="tcell tcellwidth-130 editedDate"><span>2020-01-02</span></div>
 							
 							<div class="tcell tcellwidth-130">
 								<span>
@@ -522,11 +513,7 @@
 								</span>
 							</div>
 							
-							<div class="tcell tcellwidth-130">
-								<span>
-									2개 항목
-								</span>
-							</div>
+							<div class="tcell tcellwidth-130 fileSize"><span>2개 항목</span></div>
 							
 							<div class="tcellLast tcellwidth-130">
 								<span>
@@ -546,19 +533,9 @@
 							
 							
 							
-							<div class="tcellname">
-								<div>
-									<span class="fileName">
-										h_file_name
-									</span>
-								</div>
-							</div>
+							<div class="tcellname"><div><span class="fileName">H_file_name</span></div></div>
 							
-							<div class="tcell tcellwidth-130">
-								<span>
-									2020-01-01
-								</span>
-							</div>
+							<div class="tcell tcellwidth-130 editedDate"><span>1997-04-17</span></div>
 							
 							<div class="tcell tcellwidth-130">
 								<span>
@@ -566,11 +543,7 @@
 								</span>
 							</div>
 							
-							<div class="tcell tcellwidth-130">
-								<span>
-									123 KB
-								</span>
-							</div>
+							<div class="tcell tcellwidth-130 fileSize"><span>123 KB</span></div>
 							
 							<div class="tcellLast tcellwidth-130">
 								<span>
@@ -580,12 +553,12 @@
 						</div>
 					</div>
 					
-					<div class='fileinfo fileinfo-view'>
+					<div class='fileinfo'>
 						<div class='qwer'>
 							<div class="fileinfo_header">
 								<div class=''>
-									<img src="https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20200708.002/assets/item-types/20/folder.svg" alt="" class='fixImg justify-content-center align-self-center' style='border: 1px solid red;'>
-									<span class='fileName'> asdf </span>
+									<img src="https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20200708.002/assets/item-types/20/folder.svg" alt="" class='fixImg justify-content-center align-self-center'>
+									<span class='fileName fileName-info'>FILES</span>
 								</div>
 							</div>
 							
@@ -594,15 +567,16 @@
 							<div class='tmp1 text-*-left font-weight-bolder' style='padding-left: 20px; height: 20px;'> 지난달 </div>
 							
 							<div class='tmp2'>
+								
 								<div>
-									asdf
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 								</div>
 							</div>
 
 
 							<div class='tmp2'>
 								<div>
-									asdf
+									Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 								</div>
 							</div>
 						</div>
@@ -615,25 +589,21 @@
 								</button>
 							</div>
 
-							<div>
-								<div class='TypeofFile'>
-									유형
-								</div>
-								
-<!--
+							<div class='padding-div'>
 								<div>
-									1234-12-12
+									속성
 								</div>
--->
 								
-								<div class='EditedDate'>
+								<div class='FileSize'>
+									
+								</div>
+								
+								<div>
 									수정한 날짜
 								</div>
-<!--
 								
-								<div>
+								<div class='EditedDate'>
 								</div>
--->
 							</div>
 							
 						</div>

@@ -580,7 +580,14 @@ button {
 
 .tmp2 {
 	margin: 1rem 1rem;
+	padding: 20px 10px;
 }
+
+.tmp2 div {
+	height: auto;
+}
+
+
 
 .fileDetails_Date {
 	background-color: white;
@@ -602,4 +609,9 @@ button {
 	justify-content: center;
 	padding: 0;
 	margin-bottom: 2rem;
+}
+
+
+.FileSize {
+	margin-bottom: 20px;
 }
